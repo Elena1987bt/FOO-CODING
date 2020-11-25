@@ -1,0 +1,852 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;800;900&display=swap");
+
+/* Basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #555;
+  line-height: 1.5;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+}
+.container {
+  width: 85vw;
+  max-width: 1124px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+section {
+  margin: 2em 0;
+}
+
+.section-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #f42;
+  margin: 1em 0;
+}
+.section-title i {
+  font-size: 0.7em;
+}
+
+.section-title:hover {
+  color: black;
+  cursor: pointer;
+}
+
+/* ----------------------------Nav----------------------------------------- */
+
+.nav-top,
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  background: #080505;
+  padding: 0.1em 1em;
+}
+.nav-top-left,
+nav ul {
+  display: flex;
+}
+.logo {
+  padding: 0.3em;
+  color: white;
+}
+.nav-top ul li,
+.nav-bottom ul li {
+  padding: 0.3em;
+  margin: 0 0.5em;
+}
+.nav-top ul li a {
+  font-size: 0.9em;
+}
+li.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2.2em;
+  background-color: #080505;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: hsla(0, 0%, 100%, 0.6);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid rgb(31, 29, 29);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.nav-top ul li a {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.nav-top ul li a:hover,
+.dropdown:hover .dropbtn,
+.dropdown-content a:hover {
+  color: #fff;
+}
+
+.nav-top i {
+  font-size: 0.7em;
+  margin-left: 0.4em;
+}
+
+.nav-bottom {
+  background: #fff;
+  text-transform: uppercase;
+  padding-left: 0.3em;
+}
+.nav-bottom ul li {
+  padding: 0.9em 0.5em;
+}
+.nav-bottom ul li a {
+  color: #aaa;
+}
+.nav-bottom ul li a:hover,
+.nav-bottom span:hover {
+  color: #131313;
+}
+.nav-bottom .menu-btns {
+  border-left: 1px solid rgb(228, 214, 214);
+  padding: 0.9em 0 0.9em 1.1em;
+  color: rgb(228, 214, 214);
+  cursor: pointer;
+}
+.nav-bottom .toggle-btn,
+.nav-bottom .logo {
+  display: none;
+}
+
+/* ----------------------------End of nav---------------------------- */
+
+/* ---------------------------- Main--------------------------------- */
+
+/* Showcase */
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 2; */
+  grid-gap: 1em;
+  padding: 0.5em;
+  height: 75vh;
+  background: rgb(230, 226, 226);
+  color: #fff;
+  margin-top: 0;
+}
+
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 1s ease;
+  padding: 0.8em;
+}
+
+.showcase-item:first-child {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background: linear-gradient(
+      to bottom,
+      rgba(175, 43, 43, 0.3),
+      rgba(229, 4, 4, 0.6),
+      rgb(17, 16, 16, 1)
+    ),
+    url("images/img-1.jpg") no-repeat;
+
+  justify-content: space-between;
+  margin-right: -0.5em;
+}
+.showcase-item-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+.showcase-item-top h1 {
+  font-size: 7em;
+  font-weight: bold;
+  margin-top: -0.4em;
+  text-transform: uppercase;
+}
+
+.single-feature-item {
+  padding: 1em;
+}
+.showcase-item-bottom h4,
+.single-feature-item h4 {
+  font-size: 0.8em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.showcase-item-bottom h2 {
+  font-size: 3em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.showcase-item-bottom-info,
+.single-feature-item-info {
+  display: flex;
+  justify-content: start;
+  margin-top: 0.6em;
+}
+.showcase-item-bottom-info p,
+.single-feature-item-info p {
+  margin-right: 2em;
+  font-size: 0.9em;
+}
+.showcase-item-bottom-info i,
+.single-feature-item i {
+  margin-right: 0.5em;
+}
+.showcase-item:nth-child(n + 2) h2,
+.feature-item h2 {
+  font-size: 1.9em;
+  line-height: 1.2;
+}
+.showcase-item:nth-child(2) {
+  background: linear-gradient(
+      to bottom,
+      rgba(145, 138, 138, 0.75),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/img-2.jpg") no-repeat center/cover;
+}
+.showcase-item:nth-child(3) {
+  background: linear-gradient(
+      to bottom,
+      rgba(145, 138, 138, 0.75),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/img-3.jpg") no-repeat center/cover;
+}
+.showcase-item:hover {
+  opacity: 0.76;
+  cursor: pointer;
+}
+
+/* End of showcase */
+
+/* Ad Banner */
+.tnw-ad-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em auto;
+  background: linear-gradient(rgb(139, 104, 104), rgb(54, 41, 41));
+  height: 7em;
+  width: 40em;
+  color: #fff;
+  letter-spacing: 0.3em;
+}
+/* End of Ad Banner */
+
+/* --------------------------News Section -------------------- */
+.news-items,
+.funding-items,
+.feature-items,
+.deals-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.news-item,
+.funding-item,
+.deal-item {
+  width: 23%;
+  margin-bottom: 3em;
+}
+
+.news-item img {
+  width: 100%;
+  height: 10em;
+}
+.news-item h3,
+.deal-item h3 {
+  color: black;
+  margin-bottom: 0.5em;
+}
+
+.news-item:hover h3,
+.deal-item:hover h3 {
+  color: #f42;
+}
+.news-item-bottom {
+  display: flex;
+  color: grey;
+}
+.news-item-bottom p {
+  margin-right: 1em;
+}
+/* --------------------------End of News Section -------------------- */
+
+/* --------------------------Funding section------------------------- */
+
+.funding-title,
+.deals-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.funding-title ul {
+  display: flex;
+}
+.funding-title li {
+  margin-right: 1em;
+}
+.funding-title a {
+  padding-right: 0.5em;
+  font-size: 1.2em;
+  color: #f42;
+  border-right: 2px solid #f42;
+}
+.funding-title a:hover {
+  color: black;
+}
+
+.funding-item-top {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+.funding-item-top h2 {
+  background: #f42;
+  color: #fff;
+  padding: 0.2em 0;
+}
+.funding-item-top p {
+  background: rgba(255, 68, 34, 0.08);
+  color: black;
+  font-weight: bold;
+  padding-top: 0.2em;
+}
+.funding-item-top p:last-child {
+  padding-bottom: 0.4em;
+  color: rgb(119, 110, 110);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.funding-img {
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  bottom: 1.5em;
+  left: 1em;
+}
+
+.funding-img img {
+  width: 100%;
+}
+.funding-item-bottom {
+  padding: 1em;
+  background: rgba(189, 129, 120, 0.08);
+}
+.funding-item-bottom p {
+  margin: 0.4em 0;
+  padding-bottom: 0.5em;
+}
+.funding-item-bottom p a:hover {
+  color: black;
+}
+.funding-item-bottom i {
+  margin-right: 0.5em;
+  color: #333;
+  font-size: 1.2em;
+}
+.funding-item-bottom p:last-child {
+  font-size: 0.9em;
+  padding-top: 1.5em;
+  border-top: 0.5px solid rgb(240, 173, 173);
+}
+.funding-item-bottom a {
+  color: grey;
+}
+/* --------------------------End of funding section---------------- */
+
+/* ---------------------------Feature Section ------------------------*/
+
+.feature .section-title {
+  margin-bottom: 0.5em;
+}
+.feature-item {
+  width: 31%;
+}
+.single-feature-item {
+  padding-top: 8em;
+  justify-content: flex-end;
+  color: #fff;
+}
+.single-feature-item a {
+  color: #fff;
+}
+.single-feature-item a:hover {
+  box-shadow: inset 0 0px 0 white, inset 0 -1px 0 rgb(117, 113, 113);
+}
+.feature-latest {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 68, 34, 0.08);
+  color: #f42;
+}
+.feature-latest p a {
+  color: #f42;
+}
+.feature-latest p a:hover {
+  box-shadow: inset 0 0px 0 white, inset 0 -1px 0 rgb(240, 193, 193);
+}
+.feature-latest .feature-img-container {
+  flex: 0 0 100px;
+  padding-top: 0.2em;
+}
+.feature-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.feature-latest-text {
+  padding: 1em;
+}
+.feature-latest p:first-child {
+  text-transform: uppercase;
+}
+.feature-latest p:last-child {
+  font-weight: 900;
+}
+
+.feature ul li {
+  padding: 0.5em;
+  border-bottom: 1px solid rgb(218, 228, 224);
+}
+
+.feature ul li::before {
+  content: "\2022";
+  color: #f42;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+.feature ul a {
+  color: rgb(128, 122, 122);
+}
+.feature ul a:hover {
+  color: black;
+}
+
+.feature-item:nth-child(1) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-2.png") center/cover no-repeat;
+}
+.feature-item:nth-child(2) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-1.png") center/cover no-repeat;
+}
+.feature-item:nth-child(3) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-3.png") center/cover no-repeat;
+}
+.feature-item:nth-child(4) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-4.png") center/cover no-repeat;
+}
+.feature-item:nth-child(5) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-5.jpg") center/cover no-repeat;
+}
+.feature-item:nth-child(6) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-6.jpg") center/cover no-repeat;
+}
+
+.feature-item:nth-child(7) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-7.jpg") center/cover no-repeat;
+}
+
+.feature-item:nth-child(8) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-8.jpg") center/cover no-repeat;
+}
+
+.feature-item:nth-child(9) .single-feature-item {
+  background: linear-gradient(
+      to bottom,
+      rgba(100, 96, 96, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url("images/feature-img-9.png") center/cover no-repeat;
+}
+/* ---------------------------End of Feature Section ------------------------*/
+
+/* ---------------------------Deals Section ------------------------*/
+.deals-title a {
+  display: inline-block;
+  color: #f42;
+  font-size: 1.2em;
+  margin-right: 0.2em;
+}
+
+.deals-title a:hover {
+  color: black;
+}
+
+.deal-item img {
+  width: 100%;
+  height: 14em;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.deals-item p {
+  color: #555;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.deal-item span {
+  margin-right: 1em;
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 0.8em;
+}
+/* ---------------------------End of Deals Section ------------------------*/
+
+/*-------------------------Footer ------------------------------*/
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5em;
+  background: rgb(24, 23, 23);
+}
+.social-media-icons a {
+  color: #fff;
+  font-size: 1em;
+  margin-right: 1em;
+  background-color: #333;
+  display: inline-block;
+  padding: 0.8em 1em;
+  border-radius: 50%;
+  text-align: center;
+}
+.social-media-icons a:hover {
+  background-color: black;
+}
+
+.footer-links {
+  padding-top: 1.5em;
+  text-align: center;
+}
+.footer-links a {
+  margin-right: 1em;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: rgb(170, 166, 166);
+}
+.footer-links a:hover {
+  color: #fff;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 3em;
+  background: black;
+  color: rgb(170, 166, 166);
+}
+footer p a {
+  font-weight: 600;
+  color: rgb(250, 248, 248);
+}
+footer p a:nth-child(2) {
+  text-transform: uppercase;
+}
+
+/* ------------------------End of Footer ----------------------*/
+
+/* Media Queries */
+
+/* Tablet view */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 90vw;
+  }
+  /* nav */
+  .nav-top {
+    display: none;
+  }
+
+  .nav-bottom ul li:nth-last-child(-n + 2) a {
+    display: none;
+  }
+  /* showcase */
+  .showcase {
+    height: 50vh;
+    padding-top: 3em;
+  }
+  .showcase-item-top {
+    visibility: hidden;
+  }
+  .showcase-item-bottom h2 {
+    font-size: 2.5em;
+  }
+  .showcase-item:nth-child(n + 2) h2,
+  .feature-item h2 {
+    font-size: 1.5em;
+  }
+  .showcase-item-bottom-info p,
+  .single-feature-item-info p {
+    margin-right: 1em;
+    font-size: 0.7em;
+  }
+  .showcase-item-bottom-info span,
+  .single-feature-item-info span {
+    margin-right: 0.3em;
+  }
+  /* News section */
+  .news-items,
+  .funding-items,
+  .feature-items,
+  .deals-items {
+    gap: 1.4em;
+  }
+  .news-item,
+  .funding-item,
+  .deal-item {
+    width: 31%;
+    margin-bottom: 1.5em;
+  }
+  .news-item a,
+  .deal-item h3 a {
+    font-size: 0.85em;
+  }
+  .news-item img {
+    height: 9em;
+  }
+  .news-item h3 {
+    line-height: 1;
+  }
+  .news-item-bottom p {
+    font-size: 0.9em;
+  }
+
+  /* Funding section */
+  .funding-title {
+    flex-direction: column;
+    margin-bottom: 1.5em;
+  }
+
+  .funding-title h1 {
+    margin: 0.5em 0;
+  }
+  .funding-item:last-child {
+    display: none;
+  }
+  /* Feature section */
+  .feature-item {
+    width: 48%;
+  }
+  .single-feature-item {
+    padding-top: 9em;
+  }
+  /* Deal section */
+  .deal-item img {
+    height: 12em;
+  }
+  .deal-item h3 a {
+    line-height: 1;
+  }
+}
+/* Mobile view view */
+
+@media only screen and (min-width: 350px) and (max-width: 767px) {
+  /* Nav */
+  .nav-top,
+  .nav-bottom ul {
+    display: none;
+  }
+  .nav-bottom {
+    align-items: center;
+  }
+  .nav-bottom .toggle-btn {
+    display: block;
+  }
+  .nav-bottom .logo {
+    color: white;
+    background-color: black;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 1.7em;
+    display: block;
+    padding: 0.3em 0.8em;
+  }
+  .nav-bottom .menu-btns {
+    padding: 0;
+    border-left: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-btns button {
+    outline: none;
+    border: none;
+    background: transparent;
+    margin-right: -1em;
+    cursor: pointer;
+  }
+  .menu-btns button i {
+    color: #f42;
+  }
+  .menu-btns span i {
+    border-right: 1px solid rgb(228, 214, 214);
+    border-left: 1px solid rgb(228, 214, 214);
+  }
+
+  .nav-bottom .menu-btns i {
+    font-size: 1.7em;
+    padding: 0.5em 0.6em;
+  }
+  /* Showcase */
+
+  .showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .showcase-item {
+    min-height: 30vh;
+  }
+
+  .showcase-item:first-child {
+    margin-right: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(100, 96, 96, 0.2),
+        rgba(0, 0, 0, 1)
+      ),
+      url("images/img-1.jpg") no-repeat;
+  }
+
+  .showcase-item-top {
+    visibility: hidden;
+  }
+  .showcase-item:nth-child(n + 2) {
+    grid-column: 1 /3;
+  }
+
+  .showcase-item-bottom h2,
+  .showcase-item:nth-child(n + 2) h2 {
+    font-size: 1.6em;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+  /* Ad Banner */
+  .tnw-ad-banner {
+    width: 20em;
+  }
+  /* News */
+
+  .news-item,
+  .funding-item,
+  .deal-item {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .news-item img,
+  .deal-item img {
+    width: 6em;
+    height: 6em;
+    float: left;
+    object-fit: cover;
+    margin-right: 1em;
+  }
+  .news-item h3,
+  .deal-item h3 {
+    line-height: 1.1;
+    margin: 0.3em 0;
+  }
+  /* Funding section */
+  .funding-title {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+  .funding-title ul {
+    flex-direction: column-reverse;
+  }
+  .funding-title li {
+    margin-bottom: 0.5em;
+  }
+
+  .funding-title a {
+    border-right: none;
+  }
+
+  /* Feature section */
+
+  .feature-item {
+    width: 100%;
+  }
+  /* Deal section */
+  /* Footer */
+
+  .social-media-icons a {
+    margin-right: 0.5em;
+    padding: 0.4em 0.6em;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    background: black;
+    color: rgb(170, 166, 166);
+  }
+  .footer-bottom p {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
