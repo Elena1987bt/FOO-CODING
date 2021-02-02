@@ -90,13 +90,11 @@ for (let i = 0; i < vehicles.length; i++) {
   items.push(vehicles[i] + 's');
 }
 console.log(items);
-console.log(items[items.length - 1]);
-items[items.length - 1] = 'and ' + items[items.length - 1];
-//items.splice(items.length - 1, 0, 'and');
+items.splice(items.length - 1, 0, 'and');
 console.log(items);
 let newItems = items.join(', ');
 console.log(newItems);
-newItems = newItems.replace(/,\s*$/, '');
+newItems = newItems.replace(', and,', ' and');
 
 let advertisment = "Amazing Joe's Garage, we service " + newItems + '.';
 console.log(advertisment);
@@ -111,9 +109,36 @@ console.log(advertisment);
 let car = {};
 // 13. Create an object that contains the teachers that you have had so far for the different modules.
 let teachers = {
-  firstTeacher: Baraa,
-  secondTeacher: Seif,
-  thirdTeacher: Josef,
-  languages: ['HTML', 'CSS', 'JAVASCRIPT'],
+  firstTeacher: 'Baraa',
+  secondTeacher: 'Seif',
+  thirdTeacher: 'Josef',
 };
+// 14. Add a property to the object you just created that contains the languages that they have taught you.
+teachers.languages = ['HTML', 'CSS', 'JAVASCRIPT'];
 console.log(teachers);
+
+// 15. Write some code to test two arrays for equality using == and ===. Test the following:
+let x = [1, 2, 3];
+let y = [1, 2, 3];
+let z = y;
+console.log(z);
+console.log(x == y); // this will be false
+console.log(x === y); // this will be false
+console.log(z == x); // this will be false
+console.log(z == y); // this will be true
+
+// 16. Take a look at the following code:
+
+let o1 = { foo: 'bar' };
+let o2 = { foo: 'bar' };
+let o3 = o2;
+o1.number = 22;
+o2.number = 33; // changing o2 changes o3
+console.log(o1);
+console.log(o2);
+console.log(o3);
+
+// 17. What does the following code return? (And why?)
+
+let bar = 42;
+console.log(typeof typeof bar); // typeof bar = number => typeof number => String
