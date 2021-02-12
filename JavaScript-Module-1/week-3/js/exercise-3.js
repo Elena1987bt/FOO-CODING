@@ -52,21 +52,24 @@ vehicleType('green', 1);
 3 === 3 ? console.log('yes') : console.log('no');
 
 // 6. Create a function called vehicle, like before, but takes another parameter called age, so that vehicle("blue", 1, 5) prints 'a blue used car'
+let vehicles = ['motorbike', 'caravan', 'bike'];
+// console.log(vehicles[2]);
 function vehicle(color, code, age) {
-  if (code === 1 && age >= 5) {
-    console.log('A ' + color + ' used car');
-  }
-  if (code === 2 && age > 0 && age < 5) {
-    console.log('A ' + color + ' almost new motorbike');
+  for (let i = 0; i < vehicles.length; i++) {
+    if (code === i) {
+      age > 0
+        ? console.log(`a ${color} used ${vehicles[i]}`)
+        : console.log(`a ${color} new ${vehicles[i]}`);
+    }
   }
 }
 
-vehicle('blue', 1, 5);
-vehicle('red', 2, 2);
+vehicle('black', 1, 1);
+vehicle('blue', 0, 0);
 
 // 7. Make a list of vehicles, you can add "motorbike", "caravan", "bike", or more.
 
-let vehicles = ['motorbike', 'caravan', 'bike', 'car', 'truck'];
+vehicles = ['motorbike', 'caravan', 'bike', 'car', 'truck'];
 // 8. How do you get the third element from that list?
 console.log(vehicles[2]);
 // 9. Change the function vehicle to use the list of question 7. So that vehicle("green", 3, 1) prints "a green new bike".
