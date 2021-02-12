@@ -73,19 +73,20 @@ vehicles = ['motorbike', 'caravan', 'bike', 'car', 'truck'];
 // 8. How do you get the third element from that list?
 console.log(vehicles[2]);
 // 9. Change the function vehicle to use the list of question 7. So that vehicle("green", 3, 1) prints "a green new bike".
-
+vehicles = ['motorbike', 'caravan', 'bike'];
+// console.log(vehicles[2]);
 function vehicle(color, code, age) {
-  if (code === 1 && age >= 5) {
-    console.log('A ' + color + ' used car');
-  }
-  if (code === 2 && age > 0 && age < 5) {
-    console.log('A ' + color + ' almost new motorbike');
-  }
-  if (code === 3 && age === 1) {
-    console.log('A ' + color + ' new bike');
+  for (let i = 0; i < vehicles.length; i++) {
+    if (code === i) {
+      age > 0
+        ? console.log(`a ${color} used ${vehicles[i]}`)
+        : console.log(`a ${color} new ${vehicles[i]}`);
+    }
   }
 }
-vehicle('green', 3, 1);
+
+vehicle('black', 1, 1);
+vehicle('blue', 0, 0);
 
 // 10. Use the list of vehicles to write an advertisement. So that it prints something like: "Amazing Joe's Garage, we service cars, motorbikes, caravans and bikes."
 let items = [];
