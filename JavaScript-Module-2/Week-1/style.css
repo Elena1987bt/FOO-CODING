@@ -12,27 +12,13 @@ footer {
   background-color: black;
   color: white;
   padding: 20px;
-  font-size: 20px;
 }
-main {
-  display: flex;
-  /* height: 80vh; */
+header h1 {
+  font-size: 40px;
+  font-weight: bold;
 }
-#book__list {
-  flex: 0.2;
-  border-right: 1px solid black;
-}
-#book__list li {
-  padding: 10px;
-  font-size: 20px;
-  text-transform: capitalize;
-}
-#book__list li:hover {
-  color: white;
-  background-color: black;
-}
-#books__section {
-  flex: 0.8;
+
+.books__section {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -57,6 +43,7 @@ main {
 }
 .book__card:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 .book__card h1 {
   text-transform: capitalize;

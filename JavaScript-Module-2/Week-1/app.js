@@ -13,19 +13,6 @@ const favoriteBooks = [
   'the_lying_life_of_adults',
 ];
 
-// 1.3 Add ul and li
-function createBookList(arr) {
-  const ul = document.createElement('ul');
-  ul.setAttribute('class', 'book__list');
-  for (let i = 0; i < arr.length; i++) {
-    const li = document.createElement('li');
-    li.innerHTML = arr[i].split('_').join(' ');
-    ul.appendChild(li);
-  }
-  document.getElementById('book__list').appendChild(ul);
-}
-createBookList(favoriteBooks);
-
 //1.4 Object in each book
 const books = {
   caste: {
@@ -87,8 +74,10 @@ const books = {
 
 //1.5
 function createBooks(obj) {
+  const ul = document.createElement('ul');
+  ul.setAttribute('class', 'books__section');
   for (let key in obj) {
-    const bookCard = document.createElement('div');
+    const bookCard = document.createElement('li');
     bookCard.setAttribute('class', 'book__card');
     bookCard.setAttribute('id', key);
 
@@ -103,9 +92,10 @@ function createBooks(obj) {
     const bookAuthor = document.createElement('p');
     bookAuthor.innerHTML = obj[key].author;
     bookCard.appendChild(bookAuthor);
-
-    document.getElementById('books__section').appendChild(bookCard);
+    ul.appendChild(bookCard);
   }
+  console.log(ul);
+  document.getElementById('book__list').appendChild(ul);
 }
 createBooks(books);
 
