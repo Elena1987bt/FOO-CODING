@@ -1,3 +1,5 @@
+// Another way to solve the task using the callBack function
+
 'use strict';
 const data = [
   {
@@ -49,15 +51,15 @@ const data = [
 // const dataJson = JSON.stringify(data);
 // const dataJS = JSON.parse(dataJson);
 
-//  1. Find most expensive items
+// 1. Find most expensive items
 
 function mostExpensiveItems(data) {
-  const mostExpensiveItems = [];
+  let mostExpensiveItems = [];
   const prices = data.map((item) => {
     return item.price;
   });
   //console.log(arrPrices);
-  const mostExpensivePrice = Math.max(...prices);
+  let mostExpensivePrice = Math.max(...prices);
   // console.log(mostExpensivePrice);
 
   let mostExpensiveItem;
@@ -74,18 +76,14 @@ console.log(mostExpensiveItems(data));
 
 // 2. Find most cheapest items
 
-function cheapestItems(data) {
-  const cheapestItems = [];
-  const prices = data.map((item) => {
-    return item.price;
-  });
-
-  const mostCheapestPrice = Math.min(...prices);
-
+function cheapestItems(data, fn) {
+  let cheapestItems = [];
+  let mostCheapestPrice = JSON.parse(fn(data))[0].price;
   let mostCheapestItem;
 
   for (let i = 0; i < data.length; i++) {
-    if (data[i].price === mostCheapestPrice) {
+    if (data[i].price <= mostCheapestPrice) {
+      mostCheapestPrice = data[i].price;
       mostCheapestItem = data[i];
       cheapestItems.push(mostCheapestItem);
     }
@@ -93,4 +91,4 @@ function cheapestItems(data) {
 
   return JSON.stringify(cheapestItems);
 }
-console.log(cheapestItems(data));
+console.log(cheapestItems(data, mostExpensiveItems));
