@@ -20,31 +20,6 @@ const data = [
     best_before: '2018-10-04',
     price: 22.0,
   },
-  {
-    product: 'Bread',
-    best_before: '2018-10-04',
-    price: 35.0,
-  },
-  {
-    product: 'Butter',
-    best_before: '2018-10-04',
-    price: 35.0,
-  },
-  {
-    product: 'Cheese',
-    best_before: '2018-10-04',
-    price: 35.0,
-  },
-  {
-    product: 'Bananas 1kg',
-    best_before: '2018-10-04',
-    price: 15.5,
-  },
-  {
-    product: 'Apples 1kg',
-    best_before: '2018-10-04',
-    price: 15.5,
-  },
 ];
 // const dataJson = JSON.stringify(data);
 // const dataJS = JSON.parse(dataJson);
