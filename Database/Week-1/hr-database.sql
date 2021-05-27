@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `hr` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `hr`;
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hr
@@ -55,8 +57,7 @@ CREATE TABLE `locations` (
   `city_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_name` varchar(45) NOT NULL,
   `country` varchar(45) NOT NULL,
-  PRIMARY KEY (`city_id`),
-  UNIQUE KEY `city_id_UNIQUE` (`city_id`)
+  PRIMARY KEY (`city_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-26 15:40:58
+-- Dump completed on 2021-05-27 10:04:26
