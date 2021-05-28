@@ -32,7 +32,7 @@ CREATE TABLE `employee` (
   `city_id` int(11) NOT NULL,
   PRIMARY KEY (`employee_id`),
   KEY `FOREIGN KEY_idx` (`city_id`),
-  CONSTRAINT `FOREIGN KEY` FOREIGN KEY (`city_id`) REFERENCES `locations` (`city_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `city_id` FOREIGN KEY (`city_id`) REFERENCES `locations` (`city_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -80,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-27 10:04:26
+-- Dump completed on 2021-05-28  9:14:20
