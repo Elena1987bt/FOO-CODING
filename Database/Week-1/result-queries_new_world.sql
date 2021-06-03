@@ -9,7 +9,7 @@ SELECT Name FROM new_world.country WHERE Continent = 'Europe';
 -- 5. List all the countries in the descending order of their surface areas.
 SELECT Name, SurfaceArea FROM new_world.country ORDER BY SurfaceArea DESC;
 -- 6. What are the names of all the cities in the Netherlands?
-SELECT new_world.city.Name, new_world.country.Name FROM new_world.city INNER JOIN new_world.country ON new_world.city.CountryCode = new_world.country.Code where new_world.country.Name = 'Netherlands';
+SELECT ci.Name, co.Name FROM new_world.city ci INNER JOIN new_world.country co ON ci.CountryCode = co.Code where co.Name= 'Netherlands';
 -- 7. What is the population of Rotterdam ?
 SELECT Name, Population FROM new_world.city WHERE Name = 'Rotterdam';
 -- 8. What's the top 10 countries by Surface Area ?
