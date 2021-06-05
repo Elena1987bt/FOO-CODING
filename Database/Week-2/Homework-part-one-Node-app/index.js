@@ -37,16 +37,18 @@ $query1 = 'SELECT ci.Name FROM city ci INNER JOIN country co ON ci.ID = co.Capit
    // 3. Find the number of cities in which language Z is spoken (Accept Z from user)
    // example user enters 'Chinese'
 
-   $query3 = 'SELECT COUNT(ci.Name) AS numOfCities FROM new_world.city ci INNER JOIN new_world.countrylanguage cl ON ci.CountryCode = cl.CountryCode where cl.Language=?'
+   $query3 = 'SELECT COUNT(DISTINCT(ci.Name)) AS numOfCities FROM new_world.city ci INNER JOIN new_world.countrylanguage cl ON ci.CountryCode = cl.CountryCode where cl.Language=?';
    connection.query($query3,['Chinese'], function (error, results, fields) {
      if (error) throw error;
       console.log('3. Numbers of cities where Chinese language is spoken is ' + results[0].numOfCities);
    });
 
     // 4. List all the continents with the number of languages spoken in each continent
-    $query4 = 'SELECT co.Continent, COUNT(cl.Language) AS numOfLanguages FROM new_world.country co INNER JOIN  new_world.countrylanguage cl ON co.Code = cl.CountryCode GROUP BY co.Continent'
+    $query4 = 'SELECT co.Continent, COUNT(DISTINCT(cl.Language)) AS numOfLanguages FROM new_world.country co INNER JOIN  new_world.countrylanguage cl ON co.Code = cl.CountryCode GROUP BY co.Continent';
     connection.query($query4, function (error, results, fields) {
       const res = results.map(el => el.Continent + '-' + el.numOfLanguages).toString();
       if (error) throw error;
        console.log('4. Continents with the number of languages spoken in each continent ' + res);
     });
+
+    connection.end();
