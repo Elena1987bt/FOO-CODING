@@ -3,7 +3,7 @@ SELECT ci.Name, co.Name FROM new_world.city ci INNER JOIN new_world.country co O
 -- 2. List all the languages spoken in the region Y (Accept Y from user)
 SELECT cl.Language FROM new_world.countrylanguage cl INNER JOIN new_world.country co ON cl.CountryCode = co.Code where co.Region= 'Eastern Europe';
 -- 3. Find the number of cities in which language Z is spoken (Accept Z from user)
-SELECT COUNT(ci.Name) AS numOfCities FROM new_world.city ci INNER JOIN new_world.countrylanguage cl ON ci.CountryCode = cl.CountryCode where cl.Language='Chinese';
+SELECT COUNT(DISTINCT(ci.Name)) AS numOfCities FROM new_world.city ci INNER JOIN new_world.countrylanguage cl ON ci.CountryCode = cl.CountryCode where cl.Language='Chinese';
 -- 4. List all the continents with the number of languages spoken in each continent
-SELECT co.Continent, COUNT(cl.Language) AS numOfLanguages FROM new_world.country co INNER JOIN  new_world.countrylanguage cl ON co.Code = cl.CountryCode GROUP BY co.Continent;
+SELECT co.Continent, COUNT(DISTINCT(cl.Language)) AS numOfLanguages FROM new_world.country co INNER JOIN  new_world.countrylanguage cl ON co.Code = cl.CountryCode GROUP BY co.Continent;
 
